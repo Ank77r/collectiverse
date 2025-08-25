@@ -1,0 +1,219 @@
+[
+  {
+    "title": "The Night Agent",
+    "cover": "https://occ-0-300-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABTD8aMWj2FWfWKzvS0CXA1qrnahBQvCBVPx-UvqUojNPSQUvfM7Z5M75JkFUNFA1UV3LuUB-zgIiw4sxcBCduVwI60sWPPqIPRCNjy8bYwDSSCl91hTsI0RITZaCo-vMyJ3YUg.jpg?r=480",
+    "year": 2023,
+    "genre": "Action, Drama, Thriller",
+    "rating": 7.5
+  },
+  {
+    "title": "The Walking Dead",
+    "cover": "https://posterspy.com/wp-content/uploads/2024/09/the-walking-dead-HD.jpg",
+    "year": 2010,
+    "genre": "Drama, Horror, Thriller",
+    "rating": 8.1
+  },
+  {
+    "title": "The Family Man",
+    "cover": "https://images.indianexpress.com/2019/09/amazon_familyman_2.jpg",
+    "year": 2019,
+    "genre": "Action, Comedy, Drama",
+    "rating": 8.7
+  },
+  {
+    "title": "Special Ops",
+    "cover": "https://m.media-amazon.com/images/M/MV5BN2E3OTI0OGItMWRhMi00NjU1LTk1ZTctMDEwOWZiMDczOWNlXkEyXkFqcGc@._V1_.jpg",
+    "year": 2020,
+    "genre": "Action, Crime, Thriller",
+    "rating": 8.6
+  },
+  {
+    "title": "Cobra Kai",
+    "cover": "https://netflixjunkie.com/wp-content/uploads/2021/09/p15315129_b_h8_ac-scaled.jpg",
+    "year": 2018,
+    "genre": "Action, Comedy, Drama",
+    "rating": 8.5
+  },
+  {
+    "title": "Stranger Things",
+    "cover": "https://m.media-amazon.com/images/I/71M7PiUlN9L._UF894,1000_QL80_.jpg",
+    "year": 2016,
+    "genre": "Drama, Fantasy, Horror",
+    "rating": 8.7
+  },
+  {
+    "title": "Money Heist",
+    "cover": "https://image.tmdb.org/t/p/original/lU6TnIwgDEs0yJMnAzI3M2yTMLw.jpg",
+    "year": 2017,
+    "genre": "Action, Crime, Drama",
+    "rating": 8.2
+  },
+  {
+    "title": "Squid Game",
+    "cover": "https://wallpapers.com/images/hd/squid-game-netflix-poster-k7snd3fl0h18f69w.jpg",
+    "year": 2021,
+    "genre": "Action, Drama, Mystery",
+    "rating": 8.0
+  },
+    {
+    "title": "Khakee",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMGMwN2JhNzktOTE5Ni00ODEwLWI3MjktNDMzMTRhMTkxYTZhXkEyXkFqcGc@._V1_.jpg",
+    "year": 2022,
+    "genre": "Action, Drama, Crime",
+    "rating": 8.1
+  },
+  {
+    "title": "The Last Ship",
+    "cover": "https://resizing.flixster.com/bRvtOZxsQuHT45BGu0lcZtCYV_c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjExMzA0Mi53ZWJw",
+    "year": 2014,
+    "genre": "Action, Drama, Sci-Fi",
+    "rating": 7.4
+  },
+  {
+    "title": "Game of Thrones",
+    "cover": "https://assets1.ignimgs.com/2019/03/26/game-of-thrones-season-1-poster-1553642792356.jpg",
+    "year": 2011,
+    "genre": "Action, Adventure, Drama",
+    "rating": 9.2
+  },
+  {
+    "title": "Alice In Borderland",
+    "cover": "https://lh5.googleusercontent.com/proxy/Jfy261x7-sjP2xP4aWAnp3rB5JVj2Bh0tKRixOr-JgoR_XPIWfC2OuNqxvpMZMM7UFIAkU8mnE6YLBbFZESb9mK-MsAzGlC8qWeqrBS2wlc-M6U9u6A3kyHzaOtJwQ",
+    "year": 2020,
+    "genre": "Action, Drama, Fantasy",
+    "rating": 7.6
+  },
+  {
+    "title": "Sweet Home",
+    "cover": "https://m.media-amazon.com/images/M/MV5BZDE0MTM5YjgtMzNhOS00NWE2LTkxN2EtMzg0NWRmODBmMDA5XkEyXkFqcGc@._V1_.jpg",
+    "year": 2020,
+    "genre": "Drama, Fantasy, Horror",
+    "rating": 7.3
+  },
+  {
+    "title": "Friends",
+    "cover": "https://rukminim2.flixcart.com/image/850/1000/l1whaq80/poster/e/z/i/small-poster-friends-digital-art-wall-poster-300gsm-matt-13x19-original-imagddyjzrqgzfqz.jpeg?q=20&crop=false",
+    "year": 1994,
+    "genre": "Comedy, Romance",
+    "rating": 8.9
+  },
+  {
+    "title": "All of Us Are Dead",
+    "cover": "https://image.tmdb.org/t/p/original/qdlWGlkAymeOTJEAIZyrTyq0BpP.jpg",
+    "year": 2022,
+    "genre": "Action, Drama, Fantasy",
+    "rating": 7.5
+  },
+  {
+    "title": "Delhi Crime",
+    "cover": "https://m.economictimes.com/thumb/msid-93917039,width-1200,height-900,resizemode-4,imgsize-63478/delhi-crime.jpg",
+    "year": 2019,
+    "genre": "Crime, Drama",
+    "rating": 8.5
+  },
+  {
+    "title": "The Railway Men",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a8/The_Railway_Men_Poster.jpg",
+    "year": 2023,
+    "genre": "Drama, History, Thriller",
+    "rating": 8.2
+  },
+  {
+    "title": "Betaal",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYTZjZjJiNmItYWVlZC00ZDY5LWI3ZDMtMzU4N2UzODdlMzBkXkEyXkFqcGc@._V1_.jpg",
+    "year": 2020,
+    "genre": "Action, Horror, Thriller",
+    "rating": 5.4
+  },
+  {
+    "title": "King The Land",
+    "cover": "https://resizing.flixster.com/DNxeopQkWekXRIDYBRVWVcfy5sY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811249_b_h9_aa.jpg",
+    "year": 2023,
+    "genre": "Comedy, Romance",
+    "rating": 7.0
+  },
+  {
+    "title": "Avatar: The Last Airbender",
+    "cover": "https://m.media-amazon.com/images/I/71Q6U-ofVeL._AC_UF894,1000_QL80_.jpg",
+    "year": 2024,
+    "genre": "Action, Adventure, Fantasy",
+    "rating": 7.3
+  },
+  {
+    "title": "State of Siege",
+    "cover": "https://m.media-amazon.com/images/M/MV5BMmExOWIyNjMtZmIyOC00MjJiLWE1ODMtNzM0MTFhZWI5NGFjXkEyXkFqcGc@._V1_.jpg",
+    "year": 2020,
+    "genre": "Action, Drama, History",
+    "rating": 8.0
+  },
+  {
+    "title": "Panchayat",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1a/Panchayat_logo.jpg",
+    "year": 2020,
+    "genre": "Comedy, Drama",
+    "rating": 9.0
+  },
+  {
+    "title": "Aspirants",
+    "cover": "https://media-cache.cinematerial.com/p/500x/gnpkvpty/aspirants-indian-movie-poster.jpg?v=1697193500",
+    "year": 2021,
+    "genre": "Drama",
+    "rating": 9.2
+  },
+  {
+    "title": "Kota Factory",
+    "cover": "https://images.ctfassets.net/4cd45et68cgf/3AhA2p3U66DOeckV0FzSjB/66aec560816db202770dd69b85225a73/EN_IN_KA_ENSEMBLE02_KOTA-FACTORY_S3_1x1_sRGB_PRE.jpg?w=2000",
+    "year": 2019,
+    "genre": "Drama",
+    "rating": 9.0
+  },
+  {
+    "title": "Fear The Walking Dead",
+    "cover": "https://www.syfy.com/sites/syfy/files/2021/03/amc_ftwd_exclusive_vertical_2000x3000_v2.jpg",
+    "year": 2015,
+    "genre": "Drama, Horror, Sci-Fi",
+    "rating": 6.8
+  },
+  {
+    "title": "Ghoul",
+    "cover": "https://lh5.googleusercontent.com/proxy/MAfNaHYdbi3qdpo1UoXwbrnzpt8h7nu4RdK5z-C7UkCsGR0tM73FzKWfr1tJWoNWchEUoVAxqoq6oVlsiNLzJlDF53_akq3tBLwcuz8mIA",
+    "year": 2018,
+    "genre": "Drama, Horror, Sci-Fi",
+    "rating": 7.1
+  },
+  {
+    "title": "The Boys",
+    "cover": "https://preview.redd.it/which-seasons-poster-is-your-favourite-v0-bwa61vila1cd1.jpg?width=640&crop=smart&auto=webp&s=b31f6c92d2991ebf3aa4df43bf431aef3cea194d",
+    "year": 2019,
+    "genre": "Action, Crime, Drama",
+    "rating": 8.7
+  },
+  {
+    "title": "The Witcher",
+    "cover": "https://egoamo.co.za/cdn/shop/products/TheWitcher-Season2BlizzardPosterEgoamo.co.zaPosters.jpg?v=1623085535",
+    "year": 2019,
+    "genre": "Action, Adventure, Drama",
+    "rating": 8.1
+  },
+  {
+    "title": "The Watcher",
+    "cover": "https://m.media-amazon.com/images/M/MV5BOTRhNjhhMTEtY2U4Ni00Mzc4LTkwNzgtYmFmYmUzYWJkNzVmXkEyXkFqcGc@._V1_.jpg",
+    "year": 2022,
+    "genre": "Drama, Horror, Mystery",
+    "rating": 6.5
+  },
+  {
+    "title": "Pataal Lok",
+    "cover": "https://m.media-amazon.com/images/M/MV5BM2NlZDUwNzAtZTgyYi00YjhlLThhZTEtYTIxMzdjZjVkOTI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "year": 2019,
+    "genre": "Drama, Crime, Action",
+    "rating": 8.2
+  },
+  {
+    "title": "FROM",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYzM5ZWMxOGEtZjEyMC00YjQ0LThiYjEtZjVkZGEzN2NlOGEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "year": 2022,
+    "genre": "Thriller, Suspense, Horror",
+    "rating": 7.8
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "title": "Attack on Titan",
+    "genres": ["Action", "Drama", "Fantasy"],
+    "rating": 9.1,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "Humans face extinction by Titans. Eren Yeager vows revenge after witnessing devastation.",
+    "image": "https://m.media-amazon.com/images/I/61t9ie31jgL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Jujutsu Kaisen",
+    "genres": ["Action", "Supernatural"],
+    "rating": 8.6,
+    "status": "Watching",
+    "progress": "12 / 24",
+    "description": "Yuji Itadori joins a secret jujutsu sorcerer school after swallowing a powerful cursed object.",
+    "image": "https://thecomicbookstore.in/wp-content/uploads/2022/09/TCBS2515-1-scaled.jpg"
+  },
+  {
+    "title": "Death Note",
+    "genres": ["Psychological", "Thriller", "Supernatural"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "Light Yagami gains a notebook that can kill and decides to rid the world of criminals.",
+    "image": "https://m.media-amazon.com/images/I/71GqUgwo-eL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Weathering with You",
+    "genres": ["Fantasy", "Romance", "Adventure"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/61wOzDu0HsL._AC_SL1000_.jpg"
+  },
+  {
+    "title": "Your Name",
+    "genres": ["Romance", "Supernatural", "Drama"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "March 2025",
+    "description": "Two strangers mysteriously swap bodies and form a unique bond across time and space.",
+    "image": "https://m.media-amazon.com/images/I/7188XBkmTmL._AC_SL1000_.jpg"
+  },
+  {
+    "title": "Suzume no Tojimari",
+    "genres": ["Fantasy", "Drama", "Romance"],
+    "rating": 7.6,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://images-cdn.ubuy.co.in/67487af1cbb8f121354ec5fd-suzume-no-tojimari-2023-japanese-anime.jpg"
+  },
+  {
+    "title": "Demon Slayer",
+    "genres": ["Action", "Supernatural", "Dark Fantasy"],
+    "rating": 8.6,
+    "status": "Watching",
+    "progress": "12 / 24",
+    "description": "Tanjiro becomes a demon slayer after his family is killed and his sister is turned into a demon.",
+    "image": "https://i.ebayimg.com/images/g/KwIAAOSw86JjPsO2/s-l1200.jpg"
+  },
+  {
+    "title": "Naruto",
+    "genres": ["Action", "Adventure", "Martial Arts"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "March 2025",
+    "description": "A young ninja seeks recognition and dreams of becoming the Hokage of his village.",
+    "image": "https://i.redd.it/cefs40humbi31.jpg"
+  },
+  {
+    "title": "Naruto Shippuden",
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "Naruto returns after years of training to combat new threats and rescue his friend Sasuke.",
+    "image": "https://i.pinimg.com/736x/69/08/75/6908756e621da7668bbc3378f25e6f6a.jpg"
+  },
+  {
+    "title": "Black Clover",
+    "genres": ["Action", "Supernatural", "Fantasy"],
+    "rating": 8.6,
+    "status": "Watching",
+    "progress": "12 / 24",
+    "description": "Asta, born without magic, strives to become the Wizard King in a world dominated by magic.",
+    "image": "https://m.media-amazon.com/images/I/81iOs6TbHpL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Mieruko Chan",
+    "genres": ["Horror", "Supernatural", "Comedy"],
+    "rating": 8.6,
+    "status": "Watching",
+    "progress": "12 / 24",
+    "description": "A girl who can see horrifying ghosts pretends not to notice them to survive daily life.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNmEzNmJiZjgtY2U2OC00NmRiLTg4MDgtNmE3ZGYyMDY3ZTk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "One Punch Man",
+    "genres": ["Action", "Comedy", "Superhero"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "March 2025",
+    "description": "Saitama can defeat anyone with a single punch but struggles to find a worthy opponent.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNzMwOGQ5MWItNzE3My00ZDYyLTk4NzAtZWIyYWI0NTZhYzY0XkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Dr. Stone",
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "After humanity is petrified, Senku awakens to rebuild civilization using science.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzZkYjM1MWMtNTY3Mi00MTMzLTlhNmQtN2ExZjFkYzdjZmFjXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Dragon Ball",
+    "genres": ["Action", "Adventure", "Martial Arts"],
+    "rating": 8.1,
+    "status": "Watching",
+    "progress": "32 / 153",
+    "description": "Young Goku sets out on adventures, collecting Dragon Balls and growing as a martial artist.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGQ0ZWE4NDYtYWY0Mi00MjE0LWI1MzctZDA1NGExYzE3N2FiXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Steins;Gate",
+    "genres": ["Sci-Fi", "Thriller", "Drama"],
+    "rating": 9.1,
+    "status": "Completed",
+    "watched": "March 2024",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/81nfeqsFCQL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Tokyo Ghoul",
+    "genres": ["Horror", "Supernatural", "Psychological"],
+    "rating": 8.0,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://m.media-amazon.com/images/M/MV5BZWI2NzZhMTItOTM3OS00NjcyLThmN2EtZGZjMjlhYWMwODMzXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Your Lie in April (Shigatsu wa Kimi no Uso)",
+    "genres": ["Drama", "Romance", "Music"],
+    "rating": 8.7,
+    "status": "Completed",
+    "progress": "24/24",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://www.arthipo.com/image/cache/catalog/poster/anime/1898-2381/anime2376-your-lie-in-april-poster-6-763x1100.webp"
+  },
+  {
+    "title": "Vinland Saga",
+    "genres": ["Action", "Historical", "Drama"],
+    "rating": 8.8,
+    "status": "Paused",
+    "watched": "March 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17127060_b_v8_aa.jpg"
+  },
+  {
+    "title": "Gintama",
+    "genres": ["Comedy", "Action", "Parody"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "Jan 2024",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTMzNjE0N2ItNjFiYi00NmIzLTk1MzMtZWFjNThjMzI5MTJlXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Made in Abyss",
+    "genres": ["Adventure", "Fantasy", "Drama"],
+    "rating": 8.9,
+    "status": "Completed",
+    "watched": "November 2023",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://images.justwatch.com/poster/307135732/s718/made-in-abyss.jpg"
+  },
+  {
+    "title": "The Promised Neverland",
+    "genres": ["Horror", "Mystery", "Thriller"],
+    "rating": 8.6,
+    "status": "Completed",
+    "watched": "September 2023",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGQ4ZGJhZTUtZDQ5Mi00NTI1LWEyYjItMzIxM2VlNmY4MDEyXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Kaguya-sama: Love is War",
+    "genres": ["Comedy", "Romance", "School"],
+    "rating": 8.7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/81uZRLD4+rL.jpg"
+  },
+  {
+    "title": "The Rising of the Shield Hero",
+    "genres": ["Adventure", "Fantasy", "Isekai"],
+    "rating": 7.9,
+    "status": "Completed",
+    "watched": "August 2023",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://m.media-amazon.com/images/I/71q9MkiCWGL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Parasyte: The Maxim",
+    "genres": ["Horror", "Sci-Fi", "Psychological"],
+    "rating": 8.3,
+    "status": "Completed",
+    "watched": "December 2023",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://m.media-amazon.com/images/I/616YFNlQb3L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "The Seven Deadly Sins",
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "rating": 7.8,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/81Aw-9SilML._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Goblin Slayer",
+    "genres": ["Adventure", "Dark Fantasy", "Action"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "August 2023",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://m.media-amazon.com/images/I/71ooQXkjbdL.jpg"
+  },
+  {
+    "title": "Erased",
+    "genres": ["Supernatural", "Mystery", "Drama"],
+    "rating": 8.5,
+    "status": "Completed",
+    "watched": "December 2023",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://m.media-amazon.com/images/M/MV5BZWQ2YmI5NWMtZTY2Mi00MGUxLWFhMmEtYjVjZjMwOTNkOThjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Akame ga Kill!",
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "rating": 7.6,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://images-cdn.ubuy.co.in/634eb335307c210891394b4b-cws-media-group-cws-28912-akame-ga-kill.jpg"
+  },
+  {
+    "title": "Kabaneri Of the Iron Fortress",
+    "genres": ["Dark Fantasy", "Post-Apocalyptic"],
+    "rating": 7.2,
+    "status": "Completed",
+    "watched": "August 2023",
+    "description": "Kaneki becomes half-ghoul after a fateful encounter and struggles between human and monster.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzAxY2Y5YWMtNzg2NS00MWQyLTg4YmEtNDcyMzdkZGJiNzkxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Buddy Daddies",
+    "genres": ["Action-Comedy", "Isekai", "Drama"],
+    "rating": 8.0,
+    "status": "Completed",
+    "watched": "December 2023",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://m.media-amazon.com/images/I/71wSjPbn2wL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Spy x Family",
+    "genres": ["Action", "Detective", "Mystery"],
+    "rating": 8.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/81uAmocNBtL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Monster",
+    "genres": ["Psychological", "Thriller", "Detective"],
+    "rating": 8.7,
+    "status": "Completed",
+    "watched": "December 2023",
+    "description": "A piano prodigy who loses his ability to play after his mother's death. His life changes when he meets Kaori Miyazono, a violinist who inspires him to rediscover his passion for music.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzU2MWQ5NGQtYmNlMC00ZjJkLWJmODItZDM5MDM3YmUyMWJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Bleach",
+    "genres": ["Action", "Fantasy", "Supernatural"],
+    "rating": 8.2,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/61tnqxXlGEL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Bleach : TYBW",
+    "genres": ["Action", "Fantasy", "Supernatural"],
+    "rating": 9,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Chainsaw Man",
+    "genres": ["Action", "Dark Fantasy", "Comedy horror"],
+    "rating": 8.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://i.etsystatic.com/18887914/r/il/5b59fe/5214395642/il_570xN.5214395642_7d6v.jpg"
+  },
+  {
+    "title": "Kaiju No.8",
+    "genres": ["Adventure", "Fantasy", "Supernatural"],
+    "rating": 8.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781974725984/kaiju-no-8-vol-1-9781974725984_hr.jpg"
+  },
+  {
+    "title": "Blue Lock",
+    "genres": ["Action", "Sports"],
+    "rating": 8.1,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/718vfrOBZhL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Komi Can't Communicate",
+    "genres": ["Isekai", "School"],
+    "rating": 7.7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/817dgd7CyoL.jpg"
+  },
+  {
+    "title": "Another",
+    "genres": ["Dark Fantasy", "Horror", "Isekai"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://image.tmdb.org/t/p/original/h3YyESKtOy7Rrv7zymyF9kfpz7T.jpg"
+  },
+  {
+    "title": "Summertime Rendering",
+    "genres": ["Mystery", "Thriller", "Supernatural"],
+    "rating": 8.2,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjhmN2RmYjgtN2ZlNC00YTdkLWFlMTYtMTdkNzkxMDA0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "YU-NO: A Girl Who Chants Love at the Bound of This World",
+    "genres": ["Adventure", "Fantasy", "Game"],
+    "rating": 6.4,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzYxMDc4ZGQtZjhjOC00MWE4LWIyZTYtN2Q1NjdiY2NiYTA4XkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Solo Leveling",
+    "genres": ["Action", "Fantasy", "RPG"],
+    "rating": 8.6,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/6195zoYC+mL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Grimgar: Ashes & Illusions",
+    "genres": ["Isekai", "Dark Fantasy"],
+    "rating": 7.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMmUyNzNmMDEtNjYzYi00ZDcwLTg4NTQtZTUzYzBiZTYwNzYyXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners",
+    "genres": ["Sci-Fi", "Action", "Adventure"],
+    "rating": 8.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://i.etsystatic.com/35704812/r/il/0937c7/4633548231/il_570xN.4633548231_jgim.jpg"
+  },
+  {
+    "title": "Corpse Party: Tortured Souls",
+    "genres": ["Horror", "Supernatural", "School"],
+    "rating": 6.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTMyZjM4MzQtNmQ1MC00MGFjLWJlMzQtZTZhNGI0NWVhYTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Serial Experiments Lain",
+    "genres": ["Sci-Fi", "Supernatural", "Psychological-Horror"],
+    "rating": 8.0,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/61TWDgP-reL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Yamishibai: Japanese Ghost Stories",
+    "genres": ["Horror", "Supernatural", "Folklore"],
+    "rating": 7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://images.jdmagicbox.com/comp/jd_social/news/2018aug23/image-32800-m88cj45pt8.jpg"
+  },
+  {
+    "title": "High School DxD",
+    "genres": ["Action", "Supernatural", "Harem", "Comedy"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/816OjlBuqwL.jpg"
+  },
+  {
+    "title": "The Testament of Sister New Devil",
+    "genres": ["Action", "Supernatural", "Comedy"],
+    "rating": 6.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNWJhNmI1NDgtNGFlMi00MjczLWJlNWYtNjAzMzE0NzI3ZDIwXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Harem in the Labyrinth of Another World",
+    "genres": ["Isekai", "Fantasy", "Action"],
+    "rating": 6.4,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BN2QzMWM2NDctN2EyNi00NTAxLWEzYWItMWM2NjNmNWQ5YzEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Overlord",
+    "genres": ["Action", "Supernatural", "Fantasy"],
+    "rating": 7.6,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BOWI0ZjQ3ZTYtZGU5NC00NmU1LTlkMzMtMmY1OGM4NjRiZDljXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime",
+    "genres": ["Action", "Isekai", "Fantasy"],
+    "rating": 8.1,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://media-cache.cinematerial.com/p/500x/libpmfdx/that-time-i-got-reincarnated-as-a-slime-japanese-movie-poster.jpg?v=1711779019"
+  },
+  {
+    "title": "Tonari No Seki Kun: Master of Killing Time",
+    "genres": ["Isekai", "School", "Slice of Life"],
+    "rating": 7.2,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://images.justwatch.com/poster/317919008/s332/season-1"
+  },
+  {
+    "title": "Arifureta",
+    "genres": ["Action", "Harem", "Fantasy"],
+    "rating": 7.0,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTBmMGI0ZDMtMDA3Zi00OTFiLTk4YTktNzAzZjAzNjJjMWVkXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Eminence in Shadow",
+    "genres": ["Action", "Isekai", "Fantasy"],
+    "rating": 7.8,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://pixieposters.co.uk/cdn/shop/files/TheEminenceInShadow.jpg?v=1714044767"
+  },
+  {
+    "title": "Mashle: Magic and Muscles",
+    "genres": ["Fantasy", "School", "Shonen"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/71T+ObRp5nL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Zom-100 : Bucket list of the Dead",
+    "genres": ["Comedy horror", "Action", "Fantasy"],
+    "rating": 7.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BNzhkNDM2OGUtOGUzZC00NjAzLThmODktOGE4ZjgxZjA3OWQxXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Loving Yamada at lvl.999",
+    "genres": ["Romance", "Isekai", "Comedy"],
+    "rating": 7.6,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://image.tmdb.org/t/p/original/qdqr5W1PWeISqItoCDQ9yzrsUih.jpg"
+  },
+  {
+    "title": "Tower of God",
+    "genres": ["Dark Fantasy", "Action", "Adventure"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGY0ZWQ0MDUtOWZmMS00MjE2LTkwNzEtZjk1YmQwMWQzMGEwXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Boruto: Naruto Next Generations",
+    "genres": ["Shonen", "Action", "Fantasy"],
+    "rating": 6.3,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/81HAnnghfgL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Vermeil in Gold",
+    "genres": ["Romance", "Fantasy", "Shonen"],
+    "rating": 6.7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDViZTk1ZjctMmIzMC00MTQ2LTkwN2EtMWI3Y2U1NjlmMzVhXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Blue Exorcist",
+    "genres": ["Dark Fantasy", "Action", "Shonen"],
+    "rating": 7.4,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/I/61fyEWLNXGL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Redo of Healer",
+    "genres": ["Harem", "Seinen Manga", "Dark Fantasy"],
+    "rating": 6.4,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTY3MWFmMWQtYWViYS00MzBlLWJmYWQtODZlNTJkYjRiZTZkXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Prison School",
+    "genres": ["Harem", "Comedy", "School"],
+    "rating": 7.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzc3M2VkZjYtOTQyMy00OGMzLWE4ZjUtZmE1ZTIwOWFjMWE3XkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Record of Ragnarok",
+    "genres": ["Dark Fantasy", "Fighting", "Action"],
+    "rating": 6.5,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://www.face2news.com/images/news/full81112-1.jpg"
+  },
+  {
+    "title": "Aracne",
+    "genres": ["Action-Adventure", "Fantasy", "Sci-Fi"],
+    "rating": 9,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://pbs.twimg.com/media/GUnkJ5QWMAAnZlW.jpg:large"
+  },
+  {
+    "title": "World's End Harem",
+    "genres": ["Fantasy", "Harem", "Sci-Fi"],
+    "rating": 5.8,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://ih1.redbubble.net/image.2704354210.4315/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg"
+  },
+  {
+    "title": "Shimoneta",
+    "genres": ["Comedy", "Cultured", "School"],
+    "rating": 5.8,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BZjY4YjY2NjUtYzJlNS00ZTA2LWE2YjctZDg2ZGE2NzJhOGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "Scum's Wish",
+    "genres": ["Drama", "Romance"],
+    "rating": 6.7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BYmViYjA4NDktOGNkMS00ZDZiLTllZjctNjgzNjcwOWU1MWUwXkEyXkFqcGc@._V1_.jpg"
+  },
+  {
+    "title": "Burning Kabaddi",
+    "genres": ["Sports"],
+    "rating": 7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://i.pinimg.com/474x/17/54/3e/17543ec5fbfac08fa6505de8f93f5458.jpg"
+  },
+  {
+    "title": "Kingdom Of Ruins",
+    "genres": ["Fantasy", "Action", "Drama"],
+    "rating": 7,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BY2M4MjE2ZmEtM2M2MC00NjU2LWI0Y2EtNzRkNGVkNmM5MDBjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "title": "86",
+    "genres": ["Sci-Fi", "Action", "Fantasy"],
+    "rating": 8.2,
+    "status": "Completed",
+    "watched": "February 2023",
+    "description": "A group of friends discover time travel, but changing the past brings dark consequences.",
+    "image": "https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+  }
+]

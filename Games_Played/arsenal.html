@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎮 Games Played</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0f1e, #1a0026);
+      color: #00ffff;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    canvas#bg-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: #0f0f1e;
+    }
+
+
+
+    
+    #particle-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;  /* So clicks pass through */
+      z-index: 0; /* behind text */
+    }
+
+
+    #scrollDownBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* left side */
+      font-size: 2.5rem; /* emoji size */
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.3);      /* translucent black */
+      backdrop-filter: blur(10px);          /* glass blur effect */
+      -webkit-backdrop-filter: blur(10px); /* for Safari */
+      border: 1.5px solid rgba(255, 255, 255, 0.2); /* subtle border */
+      border-radius: 50%;                   /* make it circle */
+      color: #00ffff;                       /* emoji color */
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      z-index: 1000;
+    }
+
+    #scrollDownBtn:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .glass-header {
+      position: fixed;
+      overflow: hidden;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 0.5rem 0.1rem;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid #00ffffaa;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: top 0.3s ease-in-out;
+      text-align: center; /* 👈 Center everything */
+
+      /* existing styles... */
+      animation: headerReveal 1.2s ease-out forwards;
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+
+    @keyframes headerReveal {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0;
+        filter: blur(10px);
+      }
+      60% {
+        transform: translateY(10px);
+        opacity: 0.8;
+        filter: blur(2px);
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    .glass-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #00ffff88, transparent);
+      animation: borderSwipe 2s ease-in-out forwards;
+      animation-delay: 0s;
+      z-index: -1;
+    }
+
+    @keyframes borderSwipe {
+      0% {
+        left: -100%;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+    
+
+    .glass-header h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #00ffff;
+      text-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff88;
+      letter-spacing: 0.08em;
+      animation: flicker 3s linear forwards;
+      animation-delay: 0.5s;
+
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff88;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.3;
+        text-shadow: 0 0 4px #00ffff55;
+      }
+      30%, 35% {
+        opacity: 0.6;
+        text-shadow: 0 0 8px #00ffff66;
+      }
+      40%, 50% {
+        opacity: 0.2;
+        text-shadow: 0 0 3px #00ffff33;
+      }
+    }
+
+    .glass-header .subtitle {
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #66ffffcc;
+      text-shadow: 0 0 6px #00ffff55;
+      font-style: italic;
+    }
+
+    .glass-header .back-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #66ffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .glass-header .back-link:hover {
+      color: #00ffff;
+    }
+    
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-link {
+      margin-top: 1.5rem;
+      display: inline-block;
+      color: #ff00ff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border: 1.5px solid transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #ff00ff44;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+      border-color: #ff00ff;
+      box-shadow: 0 0 20px #ff00ff;
+    }
+
+    /* Stats Section */
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem auto 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: #111122;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      border: 1px solid #00ffff33;
+      color: #ffffffcc;
+      font-size: 1rem;
+    }
+
+    .stat span {
+      color: #00ffff;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      text-align: center;
+      margin: 1rem auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-bar input {
+      padding: 0.8rem;
+      width: 80%;
+      max-width: 400px;
+      border: none;
+      border-radius: 8px;
+      background: #1e1e2e;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      box-shadow: 0 0 10px #00ffff55;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .filter-bar input:focus {
+      box-shadow: 0 0 20px #00ffffcc;
+    }
+
+    /* Card Container */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats {
+      margin-top: 200px; /* same as header height */
+    }
+
+    /* Game Card */
+    .game-card {
+      background: #1a1a2f;
+      border: 2px solid #00ffff33;
+      border-radius: 15px;
+      padding: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px #00ffff22;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #00ffff11, transparent 70%);
+      animation: pulse 4s infinite;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .game-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00ffff55;
+      border-color: #00ffff88;
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .game-card h2 {
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+      color: #ffffff;
+      z-index: 1;
+      position: relative;
+    }
+
+    .game-card p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .badge {
+      background: #ff00ff44;
+      border: 1px solid #ff00ffaa;
+      padding: 0.2rem 0.5rem;
+      margin: 0 0.2rem;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      color: #fff;
+    }
+
+    .progress-bar {
+      background: #333;
+      border-radius: 5px;
+      height: 8px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #00ffcc;
+      width: 0;
+      transition: width 0.3s ease;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
+      color: #888;
+      background-color: #05010d;
+      position: relative;
+      z-index: 1;
+      border-top: 2px solid #00ffffaa;
+      box-shadow: inset 0 5px 10px #00000088;
+      line-height: 1.5;
+    }
+
+    footer p {
+      margin: 0.2rem 0;
+    }
+
+    .footer-link {
+      color: #00ffffcc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffffaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header  class="glass-header">
+    <h1>🎮 My Game Log</h1>
+    <p class="subtitle">Track your epic gaming journey and achievements</p>
+    <a href="../index.html" class="back-link">← Return to Command Center</a>
+  </header>
+
+  <button id="scrollDownBtn" aria-label="Scroll to bottom">▼</button>
+
+  
+
+  <section class="stats">
+    <div class="stat"><span>🎮 Total Games:</span> 15</div>
+    <div class="stat"><span>✅ Completed:</span> 3</div>
+    <div class="stat"><span>🕹️ Playing:</span> 12</div>
+    <div class="stat"><span>📦 Wishlist:</span> 0</div>
+  </section>
+
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Search games..." onkeyup="searchGames()" />
+  </div>
+
+  <div class="card-container" id="gameContainer">
+    <div class="game-card">
+      <img src="https://i.pinimg.com/736x/00/06/fa/0006fa17af75b8e059bbee4363b3c8a1.jpg" alt="Genshin Impact">
+      <h2>Genshit Impact <span class="badge">Ongoing</span></h2>
+      <p>Platform: PC/Mobile</p>
+      <p>Genre: Adventure, Open World</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 50%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://m.media-amazon.com/images/M/MV5BZmQwMjQ2ZTUtZmM5MC00MTdkLWIxYzgtODU1NzQ4Zjg4NmMxXkEyXkFqcGc@._V1_.jpg" alt="Valorant">
+      <h2>Valorant <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Tactical Hero Shooter</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://m.media-amazon.com/images/M/MV5BYmRmZWFlMWQtOWRiZS00NmZkLWIyMGEtZDNjOGVhYmRkZTU5XkEyXkFqcGc@._V1_.jpg" alt="Assasins Creed">
+      <h2>Assasins Creed <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Action, Adventure</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 15%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://howlongtobeat.com/games/126186_Light_of_Alariya.jpg" alt="Lights of Alariya">
+      <h2>Lights of Alariya <span class="badge">Completed</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Action, Adventure</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://m.media-amazon.com/images/M/MV5BNjJjMTY3M2ItY2RjZS00NWEwLWI0MTQtN2U1NmNhZmJjNWViXkEyXkFqcGc@._V1_.jpg" alt="A Plague Tale:Innocence">
+      <h2>A Plague Tale : Innocence <span class="badge">Ongoing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Action, Adventure</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 20%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co75h8.jpg" alt="Fall Guys">
+      <h2>Fall Guys <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Battle Royale</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://m.media-amazon.com/images/M/MV5BYmQzZDc1ZTYtYjY2MC00YzUzLWEyN2UtZTY3ZjQ0NzA1ZWYzXkEyXkFqcGc@._V1_.jpg" alt="Farlight 84">
+      <h2>Farlight 84 <span class="badge">Paused</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Battle Royale</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 20%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://m.media-amazon.com/images/M/MV5BNjQyMjU5ODAtMzlkZC00NTg1LTgyZDEtOTA4MjcyNGM1YmVkXkEyXkFqcGc@._V1_.jpg" alt="Thief">
+      <h2>Thiefs <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Stealth, Adventure, Action</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.ebayimg.com/images/g/NWkAAOSwi6Jaq~YH/s-l1200.png" alt="Warframe">
+      <h2>Warframe <span class="badge">Paused</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Action</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 10%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-857360-52.jpg" alt="Century: Age of Ashes">
+      <h2>Century: Age of Ashes <span class="badge">Paused</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Action</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 10%;"></div>
+      </div>
+    </div>
+
+
+
+    <div class="game-card">
+      <img src="https://cdn.displate.com/artwork/270x380/2023-06-07/00acd5ef6ae988eb8291f1c751376664_28baeb55d45fb110cf10b7c3ea34b78c.jpg" alt="Eve Online">
+      <h2>Eve Online <span class="badge">Paused</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: MMORPG</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 5%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://images-cdn.ubuy.co.in/649e95974100f61f8b2e4958-world-war-z-4k-ultra-hd-blu-ray-4k.jpg" alt="World War Z">
+      <h2>World War Z <span class="badge">Completed</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Zombie, Action, Adventure, Horror/Apocalyptic</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://products.eneba.games/resized-products/Nxj9XiCs0NiKijElzOh39QSJAqSi2wuCrWPzdS-V-zs_350x200_1x-0.png" alt="Deceit">
+      <h2>Deceit <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Zombie, Survival, Horror/Apocalyptic</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1771980/capsule_616x353.jpg?t=1745441709" alt="Deceit">
+      <h2>The Operator <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Zombie, Survival, Horror/Apocalyptic</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg" alt="Dead Island 2">
+      <h2>Dead Island 2 <span class="badge">Playing</span></h2>
+      <p>Platform: PC</p>
+      <p>Genre: Zombie, Survival, Horror/Apocalyptic</p>
+      <p>Progress:</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <!-- Add more game cards here -->
+  </div>
+
+  <button class="add-game-btn" title="Add New Game">＋</button>
+
+  <footer>
+    <p>© 2025 My Gaming Portal — Powered by Sleep Deprivation & RGB Dreams 🎮</p>
+    <p>Follow us on 
+      <a href="#" target="_blank" class="footer-link">Twitter</a> | 
+      <a href="#" target="_blank" class="footer-link">Discord</a> | 
+      <a href="#" target="_blank" class="footer-link">GitHub</a>
+    </p>
+    <p>Made with 💜 by a gamer for gamers.</p>
+  </footer>
+
+  <script>
+    function searchGames() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.game-card');
+      cards.forEach(card => {
+        const title = card.querySelector('h2').textContent.toLowerCase();
+        if(title.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.glass-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down → hide header
+        header.style.top = `-${header.offsetHeight}px`;
+      } else {
+        // Scrolling up → show header
+        header.style.top = "0";
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+  <script>
+    const btn = document.getElementById('scrollDownBtn');
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>

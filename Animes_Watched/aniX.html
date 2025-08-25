@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Anime Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Quicksand&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.gradient {
+      background: linear-gradient(270deg,#230c28, #1e1e34,#2d102d, #192341 );
+      background-size: 800% 800%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 50% 100%; }
+      50% { background-position: 100% 50%; }
+      75% { background-position: 50% 0%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1, h2 {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+    }
+    a {
+      color: #f472b6;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #ec4899;
+    }
+    body.dark {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark header, body.dark section, body.dark footer {
+      background-color: rgba(0,0,0,0.7);
+      border-color: #333;
+    }
+    header {
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #444;
+      background-color: rgba(0,0,0,0.6);
+      flex-wrap: wrap;
+    }
+    header > div:first-child p {
+      margin-top: 8px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    header button {
+      background-color: #db2777;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      margin-left: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    header button:hover {
+      background-color: #be185d;
+    }
+    section.filters {
+      padding: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 1px solid #444;
+      background-color: rgba(0,0,0,0.6);
+    }
+    section.filters input,
+    section.filters select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: none;
+      background-color: #222;
+      color: white;
+      min-width: 160px;
+      font-size: 1rem;
+      outline-offset: 2px;
+    }
+    section.filters input::placeholder {
+      color: #aaa;
+    }
+    main {
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      justify-content: center;
+    }
+    .anime-card {
+      width: 300px;
+      height: 620px;
+      perspective: 1000px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #2c2c2c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      position: relative;
+    }
+    .anime-card:hover {
+      box-shadow: 0 0 24px 6px #db2777;
+    }
+    .anime-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .anime-card:hover .anime-inner {
+      transform: rotateY(180deg);
+    }
+    .anime-front, .anime-back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border-radius: 12px;
+    }
+    .anime-front img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #2c2c2c;
+    }
+    .anime-front .info {
+      padding: 18px;
+    }
+    .anime-front h2 {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+    .anime-front p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .anime-front .rating {
+      color: #fbbf24;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .anime-back {
+      background-color: #111;
+      color: #eee;
+      padding: 24px;
+      transform: rotateY(180deg);
+      overflow-y: auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .anime-back p {
+      margin-top: 12px;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+      padding: 24px;
+      border-top: 1px solid #444;
+      background-color: rgba(0,0,0,0.6);
+    }
+    footer a {
+      color: #db2777;
+      text-decoration: underline;
+      margin: 0 6px;
+    }
+    footer a:hover {
+      color: #be185d;
+    }
+  </style>
+
+  <script>
+    function filterAnimes() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const genre = document.getElementById('genreFilter').value;
+      const status = document.getElementById('statusFilter').value;
+
+      document.querySelectorAll('.anime-card').forEach(card => {
+        const title = card.querySelector('h2').innerText.toLowerCase();
+        const cardGenre = card.getAttribute('data-genre');
+        const cardStatus = card.getAttribute('data-status');
+        const matchesSearch = title.includes(search);
+        const matchesGenre = genre === 'All' || cardGenre.includes(genre);
+        const matchesStatus = status === 'All' || cardStatus === status;
+        card.style.display = (matchesSearch && matchesGenre && matchesStatus) ? '' : 'none';
+      });
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle('dark');
+      body.classList.toggle('gradient');
+    }
+  </script>
+</head>
+<body class="gradient">
+  <header>
+    <div>
+      <h1 style="color:#db2777;">My Anime Collection</h1>
+      <p>A refined and professional showcase of all animes I've watched</p>
+    </div>
+    <div>
+      <button onclick="location.href='index.html'">🏠 Home</button>
+      <button onclick="toggleDarkMode()">🌓 Toggle Mode</button>
+    </div>
+  </header>
+
+  <section class="filters">
+
+    <section style="text-align: center; padding: 12px; font-size: 1.2rem;">
+      <div style="
+        background-color: rgba(0,0,0,0.6);
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: 1px solid #2c2c2c;
+        box-shadow: 0 0 8px rgba(219, 39, 119, 0.25);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.85rem;
+        color: #f9fafb;
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+      ">
+        📌<span style="opacity: 0.7; margin-left: 4px;">Total:</span>
+        <span id="animeCount" style="font-size: 1.1rem; color: #fbbf24; margin-left: 6px;">0</span>
+      </div>
+    </section>
+
+    <input id="searchInput" oninput="filterAnimes()" type="text" placeholder="Search Anime..." />
+    <select id="genreFilter" onchange="filterAnimes()">
+      <option>All</option>
+      <option>Action</option>
+      <option>Fantasy</option>
+      <option>Romance</option>
+      <option>Comedy</option>
+      <option>Drama</option>
+      <option>Supernatural</option>
+    </select>
+    <select id="statusFilter" onchange="filterAnimes()">
+      <option>All</option>
+      <option>Completed</option>
+      <option>Watching</option>
+      <option>Plan to Watch</option>
+    </select>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="grid">
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+  fetch('aniXdata.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector('.grid');
+      container.innerHTML = ''; // Clear existing HTML if needed
+
+      data.forEach(anime => {
+        const card = document.createElement('div');
+        card.className = 'anime-card';
+        card.setAttribute('data-genre', anime.genres.join(', '));
+        card.setAttribute('data-status', anime.status);
+
+        card.innerHTML = `
+          <div class="anime-inner">
+            <div class="anime-front">
+              <img src="${anime.image}" alt="${anime.title}" />
+              <div class="info">
+                <h2>${anime.title}</h2>
+                <p>${anime.genres.join(', ')}</p>
+                <div class="rating">⭐ ${anime.rating}/10</div>
+              </div>
+            </div>
+            <div class="anime-back">
+              <p><strong>Status:</strong> ${anime.status}</p>
+              ${anime.watched ? `<p><strong>Watched:</strong> ${anime.watched}</p>` : ''}
+              ${anime.progress ? `<p><strong>Progress:</strong> ${anime.progress}</p>` : ''}
+              <p>${anime.description}</p>
+            </div>
+          </div>
+        `;
+        
+
+        container.appendChild(card);
+      });
+
+      document.getElementById('animeCount').textContent = data.length;
+
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <p>Developed by [Your Name] — <a href="#">GitHub</a> | <a href="#">Portfolio</a></p>
+  </footer>
+
+
+</body>
+</html>

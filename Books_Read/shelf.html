@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📚 My Book Checklist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(to right, #f3e9dc, #d6c7ae);
+      --card-bg: rgba(255, 255, 255, 0.15);
+      --popup-bg: rgba(30, 30, 30, 0.95);
+      --shadow: 0 4px 20px rgba(0,0,0,0.2);
+      --accent: #6d4c41;
+      --text-dark: #2e1f17;
+      --text-light: #fff;
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 90px;
+      font-family: 'Georgia', serif;
+      color: #2f1e1e;
+      background: linear-gradient(145deg, #2e6777, #9775ab, #69ae87
+);
+      background-attachment: fixed;
+      background-size: 400% 400%;
+      animation: backgroundShift 30s ease infinite;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background-color: #0a0a0a;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+    /* Flicker animation */
+    @keyframes flicker {
+      0%, 100% { opacity: 1; transform: rotate(-1deg); }
+      50% { opacity: 0.7; transform: rotate(1deg); }
+    }
+
+
+
+
+
+
+
+
+
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background-color: #18220b;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Loading Bar Container */
+    .loading-bar {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      height: 14px;
+      background: #2f5f55;
+      border-radius: 12px;
+      overflow: visible; /* allow book icon overflow */
+      box-shadow:
+        0 0 10px #00ffff88,
+        inset 0 0 8px #00ffffaa;
+    }
+
+    /* The filling bar */
+    .loading-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #83d6bf, #b3ef90, #eba8f7);
+      border-radius: 12px;
+      box-shadow:
+        0 0 12px #00ffffaa,
+        inset 0 0 15px #66ffffcc;
+      animation: fillBar 5s linear forwards;
+    }
+
+    /* Rolling Book icon */
+    .book-icon {
+      position: absolute;
+      top: -25px; /* above the bar */
+      left: 0;
+      font-size: 28px;
+      color: #00ffffcc;
+      text-shadow: 0 0 8px #00ffffbb;
+      animation: rollBook 5s linear forwards;
+      user-select: none;
+    }
+
+    /* Animation for the bar filling */
+    @keyframes fillBar {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    /* Animation for book rolling along with fill */
+    @keyframes rollBook {
+      from { left: 0; transform: rotate(0deg); }
+      to { left: calc(100% - 28px); transform: rotate(1080deg); }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      z-index: 1000;
+      transition: top 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Header text and links */
+    .header-left h1 {
+      font-size: 1.5rem;
+      color: #222;
+      font-family: 'Georgia', serif;
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #0077cc;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #0077cc;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Body padding */
+    body {
+      padding-top: 90px;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: f6eee3;
+    }
+
+
+
+    main {
+      padding: 30px 20px 60px;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .book-title {
+      margin: 12px 0 6px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .read {
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+
+    .info-popup {
+      position: absolute;
+      bottom: 50px;
+      left: 10px;
+      right: 10px;
+      background: var(--popup-bg);
+      color: var(--text-light);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      z-index: 999;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: scale(0.85);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+
+    .info-popup.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .check-date {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: #8bc34a;
+      font-style: italic;
+      min-height: 18px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto 40px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--text-light);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #5d3e36;
+    }
+
+    footer {
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.25);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #444;
+      box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    footer a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loading-bar">
+      <div class="loading-fill"></div>
+      <div class="book-icon">&#128214;</div> <!-- 📖 emoji as book icon -->
+    </div>
+  </div>
+
+
+
+  <header>
+    <div class="header-left">
+    <h1>📖My Book Collection📖</h1>
+  </div>
+  <nav>
+    <a href="#">🏠︎ Home</a>
+    <a href="#">🔖Genres</a>
+    <a href="#">ℹ️About</a>
+    <a href="#">📞Contact</a>
+  </nav>
+  </header>
+  
+
+  <main>
+    <button onclick="scrollToRandomBook()">🎲 Random Book</button>
+    <div class="book-grid">
+      <div class="book-card" data-book-id="book1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZYrc_wHPoy8jWe_oGgqwec5mxJlhvL7wIWA&s" alt="Book 1" onclick="togglePopup(this)" />
+      <div class="book-title">The Locked Door</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A thrilling mystery about a locked door hiding dark secrets.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book2">
+      <img src="https://m.media-amazon.com/images/I/81kpj1VBV-S._AC_UF1000,1000_QL80_.jpg" alt="Book 2" onclick="togglePopup(this)" />
+      <div class="book-title">Dark Matter</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A gripping sci-fi exploring alternate realities and identity.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book3">
+      <img src="https://m.media-amazon.com/images/I/81JJPDNlxSL.jpg" alt="Book 3" onclick="togglePopup(this)" />
+      <div class="book-title">Silent Patient</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A psychological thriller about a woman who stops speaking after a traumatic event.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book4">
+      <img src="https://m.media-amazon.com/images/I/91TQwXokvuL._AC_UF1000,1000_QL80_.jpg" alt="Book 4" onclick="togglePopup(this)" />
+      <div class="book-title">The Family Upstairs</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A chilling story of family secrets and inheritance.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book5">
+      <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/book/n/z/v/before-i-go-to-sleep-original-imah39defz2mgehg.jpeg?q=20&crop=false" alt="Book 5" onclick="togglePopup(this)" />
+      <div class="book-title">Before I go to Sleep</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A woman wakes up every day with no memory of her past.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book6">
+      <img src="https://m.media-amazon.com/images/M/MV5BOTQ1NDRjMDItODBiZC00NGNkLWJlMWItYmQ2MjlhZDY3ODcyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Book 6" onclick="togglePopup(this)" />
+      <div class="book-title">The Housemaid</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A dark suspense novel about deception and danger in a household.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book7">
+      <img src="https://m.media-amazon.com/images/I/8196x-1wIOL._UF1000,1000_QL80_.jpg" alt="Book 7" onclick="togglePopup(this)" />
+      <div class="book-title">Never Lie</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A suspenseful story where every lie leads to more trouble.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book8">
+      <img src="https://m.media-amazon.com/images/I/71fi+jN6QpS._UF1000,1000_QL80_.jpg" alt="Book 8" onclick="togglePopup(this)" />
+      <div class="book-title">Treasure Island</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic pirate adventure filled with treasure and betrayal.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book9">
+      <img src="https://m.media-amazon.com/images/I/81MCitX+YyL._UF1000,1000_QL80_.jpg" alt="Book 9" onclick="togglePopup(this)" />
+      <div class="book-title">Ward D</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">An intense drama set inside a psychiatric ward.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book10">
+      <img src="https://m.media-amazon.com/images/I/8163wfxPmlL._AC_UF1000,1000_QL80_.jpg" alt="Book 10" onclick="togglePopup(this)" />
+      <div class="book-title">Shutter Island</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A detective investigates a disappearance at a mental institution.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book11">
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684786321l/125974694.jpg" alt="Book 11" onclick="togglePopup(this)" />
+      <div class="book-title">Come Closer</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A chilling tale of obsession and fear.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3wVPmHtxZmcqG_AojPeJAqTcDSBEC2MFs1w&s" alt="Book 12" onclick="togglePopup(this)" />
+      <div class="book-title">Art of War</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book13">
+      <img src="https://www.belbuk.com/images/products/buku/novel--sastra/novel-umum/58886934366831.74372045l.jpg" alt="Book 13" onclick="togglePopup(this)" />
+      <div class="book-title">The Haunting of Hill House</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A terrifying story of a haunted mansion.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book11">
+      <img src="https://www.qbd.com.au/img/products/0/9780486270715.jpg" alt="Book 14" onclick="togglePopup(this)" />
+      <div class="book-title">The Invisible Man</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A chilling tale of obsession and fear.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/61f6eofR8FL._UF1000,1000_QL80_.jpg" alt="Book 15" onclick="togglePopup(this)" />
+      <div class="book-title">The Time Machine</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/71E8VNPC1dL.jpg" alt="Book 16" onclick="togglePopup(this)" />
+      <div class="book-title">Ugly Love</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/81APp2BhAKL.jpg" alt="Book 17" onclick="togglePopup(this)" />
+      <div class="book-title">Can Love Happen Twice</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/61uGuH+LM7L._AC_UF1000,1000_QL80_.jpg" alt="Book 18" onclick="togglePopup(this)" />
+      <div class="book-title">The Hound of the Baskerville</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/71HQAU4QMIL._AC_UF1000,1000_QL80_.jpg" alt="Book 19" onclick="togglePopup(this)" />
+      <div class="book-title">The Canterville Ghost</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/81qzBbPVn-L._UF1000,1000_QL80_.jpg" alt="Book 19" onclick="togglePopup(this)" />
+      <div class="book-title">Never Will I Die</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    <div class="book-card" data-book-id="book12">
+      <img src="https://m.media-amazon.com/images/I/71Hbmx0fpdL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="Book 19" onclick="togglePopup(this)" />
+      <div class="book-title">Battle of Stalingrad</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">Classic treatise on strategy and tactics.</div>
+    </div>
+
+    
+
+    <div class="book-card" data-book-id="book13">
+      <img src="https://cdn.kobo.com/book-images/da22b4fe-92b7-4ae1-a128-19103a99dca1/353/569/90/False/gulliver-s-travels-220.jpg" alt="Book 20" onclick="togglePopup(this)" />
+      <div class="book-title">Gullivers Travels</div>
+      <input type="checkbox" />
+      <div class="check-date"></div>
+      <div class="info-popup">A terrifying story of a haunted mansion.
+    </div>
+    
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+    <p>📚 Built with love for book lovers | © 2025 VisualMotionsStudio</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+  </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.book-card').forEach(card => {
+        const bookId = card.dataset.bookId;
+        const checkbox = card.querySelector('input[type="checkbox"]');
+        const dateDiv = card.querySelector('.check-date');
+
+        const saved = localStorage.getItem(`book-${bookId}`);
+        if (saved) {
+          const data = JSON.parse(saved);
+          checkbox.checked = data.checked;
+          toggleRead(checkbox, false);
+          if (data.checked && data.date) {
+            dateDiv.textContent = `Checked on: ${data.date}`;
+          }
+        }
+
+        checkbox.onclick = () => toggleRead(checkbox, true);
+      });
+    });
+
+    function toggleRead(checkbox, save = true) {
+      const card = checkbox.closest('.book-card');
+      const bookId = card.dataset.bookId;
+      const dateDiv = card.querySelector('.check-date');
+
+      if (checkbox.checked) {
+        card.classList.add('read');
+        const now = new Date();
+        const dateStr = now.toLocaleString();
+        dateDiv.textContent = `Checked on: ${dateStr}`;
+
+        if (save) {
+          localStorage.setItem(`book-${bookId}`, JSON.stringify({ checked: true, date: dateStr }));
+        }
+      } else {
+        card.classList.remove('read');
+        dateDiv.textContent = '';
+        if (save) {
+          localStorage.setItem(`book-${bookId}`, JSON.stringify({ checked: false, date: '' }));
+        }
+      }
+    }
+
+    function togglePopup(img) {
+      const card = img.closest('.book-card');
+      const popup = card.querySelector('.info-popup');
+      popup.classList.toggle('visible');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.book-card')) {
+        document.querySelectorAll('.info-popup.visible').forEach(popup => popup.classList.remove('visible'));
+      }
+    });
+
+    function scrollToRandomBook() {
+      const cards = document.querySelectorAll('.book-card');
+      const randomIndex = Math.floor(Math.random() * cards.length);
+      const randomCard = cards[randomIndex];
+
+      randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      randomCard.style.outline = '3px solid #ff9800';
+      setTimeout(() => {
+        randomCard.style.outline = 'none';
+      }, 2000);
+    }
+
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        header.style.top = "-100px"; // hide on scroll down
+      } else {
+        header.style.top = "0"; // show on scroll up
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        loader.style.pointerEvents = 'none';
+        setTimeout(() => loader.remove(), 500);
+      }, 5200); // 200ms buffer after 5s animation
+    });
+
+  </script>
+
+
+
+</body>
+</html>

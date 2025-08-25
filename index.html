@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Collections</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="loader1">
+    <canvas id="bgCanvas"></canvas>
+    <div class="logo">Visual Motions</div>
+    <div class="progress-container">
+      <div class="progress-bar"><div class="bar"></div></div>
+      <div class="loading-text">Loading your collection...</div>
+    </div>
+    <div id="animeTip"></div>
+  </div>
+
+  <!-- Particle background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation bar -->
+  <nav id="mainNav">
+    <div class="logo">MyCollections</div>
+    <ul>
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Collections</a></li>
+      <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </nav>
+
+
+  <!-- Updated Header Section -->
+  <header class="hero-header">
+    <div class="hero-content">
+      <h1>My Personal Collections</h1>
+      <p>A curated dashboard of books, games, anime, and more</p>
+    </div>
+  </header>
+
+  <!-- Search bar -->
+  <div id="searchBarContainer">
+    <input
+      type="text"
+      id="searchBar"
+      placeholder="Search collections..."
+      aria-label="Search collections"
+    />
+  </div>
+
+  <main id="collectionsGrid">
+    <a href="Books_Read/shelf.html" class="collection" data-title="Books Read">
+      <img src="ZGifs/Books.jpg" alt="Books" />
+      <h2>Books Read</h2>
+    </a>
+    <a href="Games_Played/arsenal.html" class="collection" data-title="Games Played">
+      <img src="ZGifs/Games.jpg" alt="Games" />
+      <h2>Games Played</h2>
+    </a>
+    <a href="Animes_Watched/aniX.html" class="collection" data-title="Animes Watched">
+      <img src="ZGifs/Animes.jpg" alt="Anime" />
+      <h2>Animes Watched</h2>
+    </a>
+    <a href="Series_Watched/archive.html" class="collection" data-title="Movies Watched">
+      <img src="ZGifs/Movies.jpg" alt="Movies" />
+      <h2>Movies Watched</h2>
+    </a>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">🏠︎Home</a>
+      <a href="#">ⓘAbout</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">🐱</a>
+      <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">📸</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">🔗</a>
+    </div>
+    <div style="margin-top:12px;">&copy; 2025 My Collections Dashboard</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    ScrollReveal().reveal('.hero-content h1', {
+      distance: '40px',
+      duration: 1200,
+      origin: 'top',
+      delay: 100,
+      opacity: 0,
+      reset: false
+    });
+    ScrollReveal().reveal('.hero-content p', {
+      distance: '20px',
+      duration: 1000,
+      origin: 'bottom',
+      delay: 400,
+      opacity: 0,
+      reset: false
+    });
+  </script>
+</body>
+
+</html>
